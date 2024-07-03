@@ -1,0 +1,261 @@
+// SIMPLE CALCULATOR PROJECT
+#include <iostream>
+#include <cmath>
+#include <bits/stdc++.h>
+using namespace std;
+int add(){
+    float x,s;
+    int n,i;
+    cout<<"Enter how many numbers to be added=";
+    cin>>n;
+    for(i=0;i<n;i++){
+        x=0;
+        cout<<"\nEnter a number=";
+        cin>>x;
+        s=s+x;
+    }
+    cout<<"SUM= "<<s<<endl;
+    return 0;
+}
+int product(){
+    float x,s=1;
+    int n,i;
+    cout<<"Enter how many numbers to be multiplied=";
+    cin>>n;
+    for(i=0;i<n;i++){
+        x=0;
+        cout<<"Enter a number=";
+        cin>>x;
+        s=s*x;
+    }
+    cout<<"PRODUCT= "<<s<<endl;
+    return 0;
+}
+double nthRoot(int AA, int NN)
+{
+	double xPre = rand() % 10;
+	double eps = 1e-3;
+	double delX = INT_MAX;
+	double xK;
+	while (delX > eps)
+	{
+		xK = ((NN - 1.0) * xPre +
+			(double)AA/pow(xPre, NN-1)) / (double)NN;
+		delX = abs(xK - xPre);
+		xPre = xK;
+	}
+	return xK;
+}
+int trig(){
+    int CH;
+    cout << "\n1.Trigonometric functions" << endl;
+    cout << "2.Inverse Trigonometric functions" << endl;
+    cout<<"\nEnter choice=";
+    cin>>CH;
+    if (CH==1){
+        int Ch;
+        float d;
+        cout<<"\nEnter angle in degrees=";
+        cin>>d;
+        float r=(d*3.14159265)/180;
+        cout<<"\n1.sin value"<<endl;
+        cout<<"2.cos value"<<endl;
+        cout<<"3.tan value"<<endl;
+        cout<<"4.sec value"<<endl;
+        cout<<"5.cosec value"<<endl;
+        cout<<"6.cot value"<<endl;
+        cout<<"\nEnter choice=";
+        cin>>Ch;
+        switch(Ch){
+            case 1:
+                cout<<"sin("<<d<<")= "<<sin(r)<<endl;
+                break;
+            case 2:
+                cout<<"cos("<<d<<")= "<<cos(r)<<endl;
+                break;
+            case 3:
+                cout<<"tan("<<d<<")= "<<tan(r)<<endl;
+                break;
+            case 4:
+                cout<<"sec("<<d<<")= "<<1/cos(r)<<endl;
+                break;
+            case 5:
+                cout<<"cosec("<<d<<")= "<<1/sin(r)<<endl;
+                break;
+            case 6:
+                cout<<"cot("<<d<<")= "<<1/tan(r)<<endl;
+                break;
+            default:
+                cout<<"Invalid option"<<endl;
+                break;
+        }
+    }
+    else if (CH==2){
+        int Ch;
+        float d;
+        cout<<"\nEnter value=";
+        cin>>d;
+        cout<<"\n1.sin inverse"<<endl;
+        cout<<"2.cos inverse"<<endl;
+        cout<<"3.tan inverse"<<endl;
+        cout<<"4.sec inverse"<<endl;
+        cout<<"5.cosec inverse"<<endl;
+        cout<<"6.cot inverse"<<endl;
+        cout<<"\nEnter choice=";
+        cin>>Ch;
+        switch(Ch){
+            case 1:
+                cout << "sin inverse of " << d << " is " << asin(d)
+                << " radians or " << (asin(d)*180)/3.14159265 << " degrees"<<endl;;
+                break;
+            case 2:
+                cout << "cos inverse of " << d << " is " << acos(d)
+                << " radians or " << (acos(d)*180)/3.14159265 << " degrees"<<endl;
+                break;
+            case 3:
+                cout << "tan inverse of " << d << " is " << atan(d)
+                << " radians or " << (atan(d)*180)/3.14159265 << " degrees"<<endl;
+                break;
+            case 4:
+                cout << "sec inverse of " << d << " is " << acos(1/d)
+                <<" radians or " << (acos(1/d)*180)/3.14159265 << " degrees"<<endl;
+                break;
+            case 5:
+                cout << "cosec inverse of " << d << " is " << asin(1/d)
+                <<" radians or " << (asin(1/d)*180)/3.14159265 << " degrees"<<endl;
+                break;
+            case 6:
+                cout << "cot inverse of " << d << " is " << atan(1/d)
+                <<" radians or " << (atan(1/d)*180)/3.14159265 << " degrees"<<endl;
+                break;
+            default:
+                cout<<"Invalid option"<<endl;
+                break;
+        }
+    }
+    else
+    cout<<"Invalid choice"<<endl;
+    return 0;
+}
+int alog(){
+    float l;
+    cout<<"\nEnter value=";
+    cin>>l;
+    int ch;
+    cout<<"\n1.LOG value"<<endl;
+    cout<<"2.ANTILOG value"<<endl;
+    cout<<"Enter choice=";
+    cin>>ch;
+    if (ch==1)
+    cout<<"log("<<l<<")= "<<log10(l)<<endl;
+    else if (ch==2)
+    cout<<"antilog("<<l<<")= "<<pow(10,l)<<endl;
+    else
+    cout<<"Invalid choice"<<endl;
+    return 0;
+}
+int fact(){
+    int s,i,f=1;
+    cout<<"Enter a number=";
+    cin>>s;
+    for(i=1;i<=s;i++)
+    f=f*i;
+    cout<<s<<"!= "<<f<<endl;
+    return 0;
+}
+int main(){
+    int choice;
+    cout << "WELCOME TO PROJECT 'CALCULATOR'" << endl;
+    do {
+        cout << "\n1.ADDITION" << endl;
+        cout << "2.SUBTRACTION OF 2 NUMBERS" << endl;
+        cout << "3.MULTIPLICATION" << endl;
+        cout << "4.DIVISION OF 2 NUMBERS" << endl;
+        cout << "5.Nth POWER OF A NUMBER" << endl;
+        cout << "6.Nth ROOT OF A NUMBER" << endl;
+        cout << "7.TRIGONOMETRIC FUNCTIONS" << endl;
+        cout << "8.LOG AND ANTILOG FUNCTIONS" << endl;
+        cout << "9.HYPOTENUSE OF A RIGHT TRIANGLE" << endl;
+        cout << "10.Nth FACTORIAL OF A NUMBER" << endl;
+        cout << "\nEnter your choice (ENTER 0 TO EXIT): ";
+        cin >> choice;
+        double nthRootValue;
+        switch (choice) {
+        case 1:
+            add();
+            break;
+        case 2:
+            float a,b;
+            cout<<"\nEnter a number=";
+            cin>>a;
+            cout<<"Enter a number=";
+            cin>>b;
+            cout<<"DIFFERENCE= "<<a-b<<endl;
+            break;
+        case 3:
+            product();
+            break;
+        case 4:
+            float A,B;
+            cout<<"\nEnter Dividend=";
+            cin>>A;
+            cout<<"Enter a Divisor=";
+            cin>>B;
+            try{
+                if (B==0){
+                throw "Division by zero is not possible!!\nTry Again\n";
+                }
+                else{
+                    cout<<"QUOTIENT= "<<A/B<<endl;
+                    cout<<"REMAINDER= "<<fmod(A,B)<<endl;
+                }
+            }
+            catch(const char *ex){
+                cout<<ex;
+            }
+            break;
+        case 5:
+            float N;
+            int p;
+            cout<<"Enter a number=";
+            cin>>N;
+            cout<<"Enter power n=";
+            cin>>p;
+            cout<<N<<"^"<<p<<"= "<<pow(N,p)<<endl;
+            break;
+        case 6:
+            float AA;
+            int NN;
+            cout<<"Enter a number=";
+            cin>>AA;
+            cout<<"Enter root n=";
+            cin>>NN;
+            nthRootValue = nthRoot(AA, NN);
+	        cout << "Nth root is " << nthRootValue << endl;
+            break;
+        case 7:
+            trig();
+            break;
+        case 8:
+            alog();
+            break;
+        case 9:
+            float x,y;
+            cout<<"Enter base=";
+            cin>>x;
+            cout<<"Enter height=";
+            cin>>y;
+            cout<<"\nHypotenuse="<<hypot(x,y)<<endl;
+            break;
+        case 10:
+            fact();
+            break;
+        case 0:
+            cout << "Exiting program...\nThank You" << endl;
+            break;
+        default:
+            cout << "Invalid choice\nPlease try again." << endl;
+            break;
+        }
+    } while(choice!=0);
+}
