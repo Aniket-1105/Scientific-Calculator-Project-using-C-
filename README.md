@@ -1,4 +1,4 @@
-This is a Scientific Calculator project created using basic and simple functions in C++ programming language.
+This is a simple console based Scientific Calculator project created using basic and simple functions in C++ programming language.
 This project can be used to perform the following operations on entered data:
 1. ADDITION
 2. SUBTRACTION OF 2 NUMBERS
